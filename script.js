@@ -1,7 +1,7 @@
 const modal = document.querySelector('.modal-container')
 const tbody = document.querySelector('tbody')
 const sNome = document.querySelector('#m-nome')
-const sSobrenome = document.querySelector('#m-sobrenome')
+const sCpf = document.querySelector('#m-cpf')
 const sPlano = document.querySelector('#m-plano')
 const btnSalvar = document.querySelector('#btnSalvar')
 
@@ -19,12 +19,12 @@ function openModal(edit = false, index = 0) {
 
   if (edit) {
     sNome.value = itens[index].nome
-    sSobrenome.value = itens[index].sobrenome
+    sCpf.value = itens[index].cpf
     sPlano.value = itens[index].plano
     id = index
   } else {
     sNome.value = ''
-    sSobrenome.value = ''
+    sCpf.value = ''
     sPlano.value = ''
   }
   
@@ -46,7 +46,7 @@ function insertItem(item, index) {
 
   tr.innerHTML = `
     <td>${item.nome}</td>
-    <td>${item.sobrenome}</td>
+    <td>${item.cpf}</td>
     <td>${item.plano}</td>
     <td class="acao">
       <button onclick="editItem(${index})"><i class='bx bx-edit' ></i></button>
@@ -60,7 +60,7 @@ function insertItem(item, index) {
 
 btnSalvar.onclick = e => {
   
-  if (sNome.value == '' || sSobrenome.value == '' || sPlano.value == '') {
+  if (sNome.value == '' || sCpf.value == '' || sPlano.value == '') {
     return
   }
 
@@ -68,10 +68,10 @@ btnSalvar.onclick = e => {
 
   if (id !== undefined) {
     itens[id].nome = sNome.value
-    itens[id].sobrenome = sSobrenome.value
+    itens[id].cpf = sCpf.value
     itens[id].plano = sPlano.value
   } else {
-    itens.push({'nome': sNome.value, 'sobrenome': sSobrenome.value, 'plano': sPlano.value})
+    itens.push({'nome': sNome.value, 'cpf': sCpf.value, 'plano': sPlano.value})
   }
 
   setItensBD()
@@ -117,3 +117,5 @@ campoDeSelecao.addEventListener("change", function() {
 });
 
 var form = document.querySelector('form');
+
+

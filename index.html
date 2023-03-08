@@ -11,9 +11,11 @@
 </head>
 
 <body>
+  
+  
   <div class="container">
     <div class="header">
-      <span>Cadastro de Funcionários</span>
+      <span>Cadastro de Alunos  </span>
       <button onclick="openModal()" id="new">Incluir</i></button>
     </div>
 
@@ -22,14 +24,16 @@
         <thead>
           <tr>
             <th>Nome</th>
-            <th>Sobrenome</th>
+            <th>Cpf</th>
             <th>Plano</th>
             <th class="acao">Editar</th>
             <th class="acao">Excluir</th>
           </tr>
         </thead>
+        
         <tbody>
         </tbody>
+       
       </table>
     </div>
 
@@ -39,29 +43,41 @@
           <label for="m-nome">Nome</label>
           <input id="m-nome" type="text" required />
   
-          <label for="m-sobrenome">Sobrenome</label>
-          <input id="m-sobrenome" type="text" required />
+          <label for="m-cpf">Cpf</label>
+          <input id="m-cpf" type="number" required />
   
           <label for="m-plano">ESCOLHA UM PLANO:</label>
-                    <select id="m-plano" required>
-                        <option value="Musculação mensal">Musculação mensal</option>
-                        <option value="Musculação semestral">Musculação semestral</option>
-                        <option value="Musculação anual">Musculação anual</option>
-                        <option value="Luta mensal">Luta mensal</option>
-                        <option value="Luta semestral">Luta semestral</option>
-                        <option value="Luta anual">Luta anual</option>
-                        <option value="Crossfit mensal">Crossfit mensal</option>
-                        <option value="Crossfit semestral">Crossfit semestral</option>
-                        <option value="Crossfit anual">Crossfit anual</option>
-                    </select>
-                    <div id="resultado"> resultado</div>
+          <select id="m-plano" required>
+            <option value="Musculação mensal">Musculação mensal</option>
+            <option value="Musculação semestral">Musculação semestral</option>
+            <option value="Musculação anual">Musculação anual</option>
+            <option value="Luta mensal">Luta mensal</option>
+            <option value="Luta semestral">Luta semestral</option>
+            <option value="Luta anual">Luta anual</option>
+            <option value="Crossfit mensal">Crossfit mensal</option>
+            <option value="Crossfit semestral">Crossfit semestral</option>
+            <option value="Crossfit anual">Crossfit anual</option>
+          </select>
+          <div id="resultado"> resultado</div>
+
           <button id="btnSalvar">Salvar</button>
         </form>
       </div>
     </div>
 
+    <div class="modal-container hidden" id="confirmDeleteModal">
+      <div class="modal">
+        <p>Você tem certeza que deseja excluir este registro?</p>
+        <div class="modal-buttons">
+          <button id="btnDeleteConfirm">Confirmar</button>
+          <button id="btnDeleteCancel">Cancelar</button>
+        </div>
+      </div>
+    </div>
+
   </div>
   <script src="script.js"></script>
+ 
 </body>
 
 </html>
